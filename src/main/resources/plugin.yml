@@ -1,0 +1,8 @@
+name: TimeSorting
+version: '${project.version}'
+main: me.vister.timesorting.TimeSorting
+api-version: 1.19
+authors: [ VisteR_ ]
+
+commands:
+  sortpanel:
