@@ -36,7 +36,7 @@ public class PlayerListener extends PanelManager implements Listener {
                     case 1 -> SortPanelCmd.sort.selectionSort();
                     case 2 -> SortPanelCmd.sort.insertionSort();
                     case 3 -> SortPanelCmd.sort.binarySort();
-                } Bukkit.getScheduler().runTask(plugin, () -> openPanel((Player) e.getWhoClicked()));
+                } openPanel((Player) e.getWhoClicked());
             } else e.getWhoClicked().sendMessage("§cMinimum amount of numbers to sort is 8!");
         }
     }
