@@ -8,7 +8,9 @@ public final class TimeSorting extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getCommand("sortpanel").setExecutor(new SortPanelCmd(this));
-        getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+        TimeSorting plugin = this;
+
+        getCommand("sortpanel").setExecutor(new SortPanelCmd(plugin));
+        getServer().getPluginManager().registerEvents(new PlayerListener(plugin), plugin);
     }
 }

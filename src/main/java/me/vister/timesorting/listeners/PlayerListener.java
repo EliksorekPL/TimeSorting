@@ -1,7 +1,6 @@
 package me.vister.timesorting.listeners;
 
 import me.vister.timesorting.TimeSorting;
-import me.vister.timesorting.commands.SortPanelCmd;
 import me.vister.timesorting.managers.PanelManager;
 import me.vister.timesorting.utils.TimeSort;
 import org.bukkit.Bukkit;
@@ -32,11 +31,11 @@ public class PlayerListener extends PanelManager implements Listener {
                 e.getWhoClicked().sendMessage("§7Enter number: ");
             } else if (numbersToSort.getNumbers().size() > 7) {
                 switch (e.getRawSlot()) {
-                    case 0 -> SortPanelCmd.sort.bubbleSort();
-                    case 1 -> SortPanelCmd.sort.selectionSort();
-                    case 2 -> SortPanelCmd.sort.insertionSort();
-                    case 3 -> SortPanelCmd.sort.binarySort();
-                } Bukkit.getScheduler().runTask(plugin, () -> openPanel((Player) e.getWhoClicked()));
+                    case 0 -> sort.bubbleSort();
+                    case 1 -> sort.selectionSort();
+                    case 2 -> sort.insertionSort();
+                    case 3 -> sort.binarySort();
+                } openPanel((Player) e.getWhoClicked());
             } else e.getWhoClicked().sendMessage("§cMinimum amount of numbers to sort is 8!");
         }
     }
