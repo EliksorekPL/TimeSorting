@@ -59,9 +59,7 @@ public class TimeSort {
             int minimum_index = i;
             for (int j = i + 1; j < numbers.length; j++)
                 if (numbers[j] < numbers[minimum_index]) minimum_index = j;
-            int temp = numbers[minimum_index];
-            numbers[minimum_index] = numbers[i];
-            numbers[i] = temp;
+            swap(numbers, minimum_index, i);
         }
         long endTime = System.nanoTime();
         sortMethodResult.put(SortType.SELECTION_SORT, ((endTime - startTime) / 1_000_000.0F));
